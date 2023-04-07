@@ -1,0 +1,35 @@
+#' @useDynLib marble, .registration = TRUE
+#' @importFrom Rcpp sourceCpp
+NULL
+
+#' @docType package
+#' @keywords overview
+#' @name marble-package
+#' @title  Robust Marginal Bayesian Variable Selection for Gene-Environment Interactions
+#' @aliases marble-package
+#' @description In this package, we provide a set of robust marginal Bayesian variable selection methods for gene-environment interaction analysis. A Bayesian formulation of the quantile regression has been adopted to accommodate data contamination and heavy-tailed distributions in the response. The proposed method conducts a robust marginal variable selection by accounting for structural sparsity. In particular, the spike-and-slab priors are imposed to identify important main and interaction effects.
+#' In addition to the default method, users can also choose different structures (robust or non-robust), methods without spike-and-slab priors.
+#'
+#' @details The user friendly, integrated interface \strong{marble()} allows users to flexibly choose the fitting methods they prefer. There are two arguments in marble() that control the fitting method:
+#' robust: whether to use robust methods; sparse: whether to use the spike-and-slab priors to create sparsity.
+#' The function marble() returns a marble object that contains the posterior estimates of each coefficients. Moreover, it also provides a rank list of the genetic factors and gene-environment interactions.
+#' Functions GxESelection() and print() are implemented for marble objects.
+#' GxESelection() takes a marble object and returns the variable selection results.
+#'
+#' @references
+#' Lu, X., Fan, K., Ren, J., and Wu, C. (2021). Identifying Gene–Environment Interactions With Robust Marginal Bayesian Variable Selection.
+#' {\emph{Frontiers in Genetics}, 12:667074}
+#' 
+#' Ren, J., Zhou, F., Li, X., Ma, S., Jiang, Y. and Wu, C. (2020). Robust Bayesian variable selection for gene-environment interactions.
+#'
+#' Zhou, F., Ren, J., Lu, X., Ma, S. and Wu, C. (2020). Gene–Environment Interaction: a Variable Selection Perspective. Epistasis. Methods in Molecular Biology.
+#' {\emph{Humana Press} (Accepted)} \url{https://arxiv.org/abs/2003.02930}
+#'
+#' Wu, C., Cui, Y., and Ma, S. (2014). Integrative analysis of gene–environment interactions under a multi–response partially linear varying coefficient model.
+#' {\emph{Statistics in Medicine}, 33(28), 4988–4998} \url{https://doi.org/10.1002/sim.6287}
+#' 
+#' Shi, X., Liu, J., Huang, J., Zhou, Y., Xie, Y. and Ma, S. (2014). A penalized robust method for identifying gene–environment interactions. {\emph{Genetic epidemiology}, 38(3), 220-230}
+#' 
+#' Chai, H., Zhang, Q., Jiang, Y., Wang, G., Zhang, S., Ahmed, S. E. and Ma, S. (2017). Identifying gene-environment interactions for prognosis using a robust approach. {\emph{Econometrics and statistics}, 4, 105-120}
+#' @seealso \code{\link{marble}}
+NULL
