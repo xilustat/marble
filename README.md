@@ -25,6 +25,14 @@ Recently, multiple marginal variable selection methods have been developed and s
     
     max.steps=10000
     fit=marble(X, Y, E, clin, max.steps=max.steps)
+    ## coefficients of parameters
+    fit$coefficient
+    ## Estimated values of main G effects 
+    fit$coefficient$G
+    ## Estimated values of interactions effects 
+    fit$coefficient$GE
+    ## Rank list of main G effects and interactions 
+    fit$ranklist
     selected=GxESelection(fit,sparse=TRUE)
     selected
     
