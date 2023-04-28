@@ -18,7 +18,7 @@ BLasso <- function(X, Y, E, clin, max.steps, debugging=FALSE)
     else {0}
   }
   
-max.steps=10000
+
 hatAlpha = rep(1,env); hatb = rep(1,q); hatEta= rep(1,env); hatBeta=1
 invSigAlpha0= diag(rep(1,env)); invSigb0 = diag(rep(1,q))
 hatInvTauSq1= 1; hatInvTauSq2 = rep(1,env); hatLambdaSqStar1=1; hatLambdaSqStar2=1
@@ -32,7 +32,6 @@ for(j in 1:p)
   
   x=g[,j]
   w=xx[,((env*(j-1)+1):(j*env))]
-  max.steps=10000
   betas =  BL(x,y,e,c,w,max.steps,n,hatBeta,hatEta,hatAlpha,hatb,hatInvTauSq1,hatInvTauSq2,invSigAlpha0, invSigb0, hatLambdaSqStar1, hatLambdaSqStar2,hatSigmaSq, aStar, bStar, alpha, gamma, progress)
   t1=as.matrix(betas$GS.beta)
   coef_G_BL=cbind(coef_G_BL, t1)

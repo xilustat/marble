@@ -5,7 +5,7 @@
 #' @docType data
 #' @keywords datasets
 #' @name dat
-#' @aliases dat  X Y E clin 
+#' @aliases dat  X Y E clin
 #' @usage data("dat")
 #' @format dat consists of four components: X, Y, E, clin. 
 #' @details

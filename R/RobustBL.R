@@ -11,7 +11,6 @@ RobustBL <- function(X, Y, E, clin, max.steps, debugging=FALSE)
   clin.names = dat$clin.names
   GXE.names = dat$GXE.names
   
-  max.steps=10000
   hatAlpha = rep(1,env); hatb = rep(1,q); hatEta= rep(1,env); hatBeta=1; hatTau=1; hatV = rep(1,n)
   invSigAlpha0= diag(rep(1,env)); invSigb0 = diag(rep(1,q))
   hatSg1=1; hatSg2 = rep(1,env); hatEtaSq1=1; hatEtaSq2=1
@@ -25,7 +24,6 @@ RobustBL <- function(X, Y, E, clin, max.steps, debugging=FALSE)
     
     x=g[,j]
     w=xx[,((env*(j-1)+1):(j*env))]
-    max.steps=10000
     betas = RBL(x,y,w,c,e,max.steps,n,hatAlpha,hatb,hatBeta,hatEta,hatTau,hatV,hatSg1,hatSg2,invSigAlpha0, invSigb0, hatEtaSq1, hatEtaSq2, theta, r1, r,a ,b, progress)
     t1=as.matrix(betas$GS.beta)
     coef_G_RBL=cbind(coef_G_RBL, t1)

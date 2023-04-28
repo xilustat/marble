@@ -27,7 +27,7 @@ RobustBLSS <- function(X, Y, E, clin, max.steps, debugging=FALSE)
     
     x=g[,j]
     w=xx[,((env*(j-1)+1):(j*env))]
-    max.steps=10000
+    
     betas = RBLSS(x,y,w,c,e,max.steps,n,hatAlpha,hatb,hatBeta,hatEta,hatTau,hatV,hatSg1,hatSg2,sg1,sg2,invSigAlpha0, invSigb0, hatEtaSq1, hatEtaSq2, theta, r1, r,a ,b ,hatPiBeta,hatPiEta,sh0,sh1, progress)
     t1=as.matrix(betas$GS.beta)
     coef_G_RBLSS=cbind(coef_G_RBLSS, t1)

@@ -32,6 +32,15 @@ marble(
 
 \item{debugging}{logical flag. If TRUE, progress will be output to the console and extra information will be returned.}
 }
+\value{
+an object of class `marble' is returned, which is a list with component:
+\item{posterior}{the posterior samples of coefficients from the MCMC.}
+\item{coefficient}{the estimated value of coefficients.}
+\item{ranklist}{the rank list of main and interaction effects.}
+\item{burn.in}{the total number of burn-ins.}
+\item{iterations}{the total number of iterations.}
+\item{design}{the design matrix of all effects.}
+}
 \description{
 fit a robust Bayesian variable selection model for G×E interactions.
 }
@@ -67,7 +76,7 @@ Please check the references for more details about the prior distributions.
 data(dat)
 
 ## default method
-max.steps=10000
+max.steps=5000
 fit=marble(X, Y, E, clin, max.steps=max.steps)
 
 ## coefficients of parameters
@@ -94,6 +103,10 @@ fit$coefficient
 fit$ranklist
 }
 
+}
+\references{
+Lu, X., Fan, K., Ren, J., and Wu, C. (2021). Identifying Gene–Environment Interactions With Robust Marginal Bayesian Variable Selection.
+{\emph{Frontiers in Genetics}, 12:667074} \doi{10.3389/fgene.2021.667074}
 }
 \seealso{
 \code{\link{GxESelection}}

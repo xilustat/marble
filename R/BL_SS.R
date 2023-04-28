@@ -11,7 +11,7 @@ BL_SS <- function(X, Y, E, clin, max.steps, debugging=FALSE)
   clin.names = dat$clin.names
   GXE.names = dat$GXE.names
   
-  max.steps=10000
+  #max.steps=10000
   hatAlpha = rep(1,env); hatb = rep(1,q); hatEta= rep(1,env); hatBeta=1
   invSigAlpha0= diag(rep(1,env)); invSigb0 = diag(rep(1,q))
   hatInvTauSq1= 1; hatInvTauSq2 = rep(1,env)
@@ -27,7 +27,6 @@ BL_SS <- function(X, Y, E, clin, max.steps, debugging=FALSE)
   {
     x=g[,j]
     w=xx[,((env*(j-1)+1):(j*env))]
-    max.steps=10000
     betas = BLSS(x,y,e,c,w,max.steps,n,hatBeta,hatEta,hatAlpha,hatb,hatInvTauSq1,hatInvTauSq2,sg1,sg2,hatPiEta,hatPiBeta,invSigAlpha0, invSigb0, hatLambdaSqStar1, hatLambdaSqStar2,hatSigmaSq, aStar, bStar, alpha, gamma,mu0,nu0, progress)
     t1=as.matrix(betas$GS.beta)
     coef_G_BLSS=cbind(coef_G_BLSS, t1)

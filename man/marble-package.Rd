@@ -12,24 +12,27 @@ In addition to the default method, users can also choose different structures (r
 The user friendly, integrated interface \strong{marble()} allows users to flexibly choose the fitting methods they prefer. There are two arguments in marble() that control the fitting method:
 robust: whether to use robust methods; sparse: whether to use the spike-and-slab priors to create sparsity.
 The function marble() returns a marble object that contains the posterior estimates of each coefficients. Moreover, it also provides a rank list of the genetic factors and gene-environment interactions.
-Functions GxESelection() and print() are implemented for marble objects.
+Functions GxESelection() and print.marble() are implemented for marble objects.
 GxESelection() takes a marble object and returns the variable selection results.
 }
 \references{
 Lu, X., Fan, K., Ren, J., and Wu, C. (2021). Identifying Gene–Environment Interactions With Robust Marginal Bayesian Variable Selection.
-{\emph{Frontiers in Genetics}, 12:667074}
+{\emph{Frontiers in Genetics}, 12:667074} \doi{10.3389/fgene.2021.667074}
 
 Ren, J., Zhou, F., Li, X., Ma, S., Jiang, Y. and Wu, C. (2020). Robust Bayesian variable selection for gene-environment interactions.
+\doi{10.1111/biom.13670}
 
 Zhou, F., Ren, J., Lu, X., Ma, S. and Wu, C. (2020). Gene–Environment Interaction: a Variable Selection Perspective. Epistasis. Methods in Molecular Biology.
 {\emph{Humana Press} (Accepted)} \url{https://arxiv.org/abs/2003.02930}
 
 Wu, C., Cui, Y., and Ma, S. (2014). Integrative analysis of gene–environment interactions under a multi–response partially linear varying coefficient model.
-{\emph{Statistics in Medicine}, 33(28), 4988–4998} \url{https://doi.org/10.1002/sim.6287}
+{\emph{Statistics in Medicine}, 33(28), 4988–4998} \doi{10.1002/sim.6287}
 
-Shi, X., Liu, J., Huang, J., Zhou, Y., Xie, Y. and Ma, S. (2014). A penalized robust method for identifying gene–environment interactions. {\emph{Genetic epidemiology}, 38(3), 220-230}
+Shi, X., Liu, J., Huang, J., Zhou, Y., Xie, Y. and Ma, S. (2014). A penalized robust method for identifying gene–environment interactions. 
+{\emph{Genetic epidemiology}, 38(3), 220-230} \doi{10.1002/gepi.21795}
 
-Chai, H., Zhang, Q., Jiang, Y., Wang, G., Zhang, S., Ahmed, S. E. and Ma, S. (2017). Identifying gene-environment interactions for prognosis using a robust approach. {\emph{Econometrics and statistics}, 4, 105-120}
+Chai, H., Zhang, Q., Jiang, Y., Wang, G., Zhang, S., Ahmed, S. E. and Ma, S. (2017). Identifying gene-environment interactions for prognosis using a robust approach. 
+{\emph{Econometrics and statistics}, 4, 105-120} \doi{10.1016/j.ecosta.2016.10.004}
 }
 \seealso{
 \code{\link{marble}}

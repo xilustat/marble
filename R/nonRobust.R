@@ -6,7 +6,7 @@ nonRobust <- function(X, Y, E, clin, max.steps, sparse, debugging=FALSE)
   n = dat$n; p = dat$p; q=ncol(c)
   env = dat$env
   
-  max.steps=10000
+  #max.steps=10000
   hatAlpha = rep(1,env); hatb = rep(1,q); hatEta= rep(1,env); hatBeta=1
   invSigAlpha0= diag(rep(1,env)); invSigb0 = diag(rep(1,q))
   hatInvTauSq1= 1; hatInvTauSq2 = rep(1,env)

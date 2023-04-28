@@ -34,7 +34,7 @@ Please check the references for more details about the variable selection.
 }
 \examples{
 data(dat)
-max.steps=10000
+max.steps=5000
 ## sparse
 fit=marble(X, Y, E, clin, max.steps=max.steps)
 selected=GxESelection(fit,sparse=TRUE)
@@ -50,7 +50,7 @@ selected
 }
 \references{
 Lu, X., Fan, K., Ren, J., and Wu, C. (2021). Identifying Gene–Environment Interactions With Robust Marginal Bayesian Variable Selection.
-{\emph{Frontiers in Genetics}, 12:667074}
+{\emph{Frontiers in Genetics}, 12:667074} \doi{10.3389/fgene.2021.667074}
 }
 \seealso{
 \code{\link{marble}}

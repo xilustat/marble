@@ -11,6 +11,14 @@ NULL
 #' @param robust logical flag. If TRUE, robust methods will be used.
 #' @param sparse logical flag. If TRUE, spike-and-slab priors will be used to shrink coefficients of irrelevant covariates to zero exactly.
 #' @param debugging logical flag. If TRUE, progress will be output to the console and extra information will be returned.
+#' @return an object of class `marble' is returned, which is a list with component:
+#' \item{posterior}{the posterior samples of coefficients from the MCMC.}
+#' \item{coefficient}{the estimated value of coefficients.}
+#' \item{ranklist}{the rank list of main and interaction effects.}
+#' \item{burn.in}{the total number of burn-ins.}
+#' \item{iterations}{the total number of iterations.}
+#' \item{design}{the design matrix of all effects.}
+#' 
 #' @details Consider the data model described in "\code{\link{dat}}":
 #' \deqn{Y_{i} = \alpha_{0} + \sum_{k=1}^{q}\alpha_{k}E_{ik}+\sum_{t=1}^{m}\gamma_{t}clin_{it}+\beta_{j}X_{ij}+\sum_{k=1}^{q}\eta_{jk}X_{ij}E_{ik}+\epsilon_{i},}
 #' Where \eqn{\alpha_{0}} is the intercept, \eqn{\alpha_{k}}'s and \eqn{\gamma_{t}}'s are the regression coefficients corresponding to effects of environmental and clinical factors.
@@ -37,6 +45,10 @@ NULL
 #' Both \eqn{X}, \eqn{clin} and \eqn{E} will be standardized before the generation of interaction terms to avoid the multicollinearity between main effects and interaction terms.
 #'
 #' Please check the references for more details about the prior distributions.
+#' 
+#' @references
+#' Lu, X., Fan, K., Ren, J., and Wu, C. (2021). Identifying Gene–Environment Interactions With Robust Marginal Bayesian Variable Selection.
+#' {\emph{Frontiers in Genetics}, 12:667074} \doi{10.3389/fgene.2021.667074}
 #'
 #' @seealso \code{\link{GxESelection}}
 #'
@@ -44,7 +56,7 @@ NULL
 #' data(dat)
 #'
 #' ## default method
-#' max.steps=10000
+#' max.steps=5000
 #' fit=marble(X, Y, E, clin, max.steps=max.steps)
 #' 
 #' ## coefficients of parameters
@@ -91,7 +103,7 @@ marble <- function(X, Y, E, clin, max.steps=10000, robust=TRUE, sparse=TRUE, deb
   }else{
     out = nonRobust(X, Y, E, clin, max.steps, sparse, debugging)
   }
-  
+  class(out) = "marble"
   out
   
 }

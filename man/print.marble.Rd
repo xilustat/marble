@@ -11,7 +11,10 @@
 
 \item{digits}{significant digits in printout.}
 
-\item{...}{other print arguments}
+\item{...}{other print arguments.}
+}
+\value{
+No return value, called for side effects.
 }
 \description{
 Print a summary of a marble object
