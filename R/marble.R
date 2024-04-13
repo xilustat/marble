@@ -24,12 +24,12 @@ NULL
 #' Where \eqn{\alpha_{0}} is the intercept, \eqn{\alpha_{k}}'s and \eqn{\gamma_{t}}'s are the regression coefficients corresponding to effects of environmental and clinical factors.
 #' And \eqn{\beta_{j}}'s and \eqn{\eta_{jk}}'s are the regression coefficients of the genetic variants and G\eqn{\times}E interactions effects, correspondingly. 
 #'
-#' When {sparse=TRUE} (default), spike--and--slab priors are imposed to identify important main and interaction effects. If {sparse=FALSE}, Laplacian shrinkage will be used.
+#' When sparse=TRUE (default), spike--and--slab priors are imposed to identify important main and interaction effects. If sparse=FALSE, Laplacian shrinkage will be used.
 #'
-#' When {robust=TRUE} (default), the distribution of \eqn{\epsilon_{i}} is defined as a Laplace distribution with density
+#' When robust=TRUE (default), the distribution of \eqn{\epsilon_{i}} is defined as a Laplace distribution with density
 #' \eqn{
 #' f(\epsilon_{i}|\nu) = \frac{\nu}{2}\exp\left\{-\nu |\epsilon_{i}|\right\}
-#' }, (\eqn{i=1,\dots,n}), which leads to a Bayesian formulation of LAD regression. If {robust=FALSE}, \eqn{\epsilon_{i}} follows a normal distribution.
+#' }, (\eqn{i=1,\dots,n}), which leads to a Bayesian formulation of LAD regression. If robust=FALSE, \eqn{\epsilon_{i}} follows a normal distribution.
 #'
 #' Here, a rank list of the main and interaction effects is provided. For method incorporating spike-and-slab priors,  
 #' the inclusion probability is used to indicate the importance of predictors. 

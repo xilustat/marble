@@ -2,7 +2,7 @@
 #' @importFrom Rcpp sourceCpp
 NULL
 
-#' @docType package
+#' _PACKAGE
 #' @keywords overview
 #' @name marble-package
 #' @title  Robust Marginal Bayesian Variable Selection for Gene-Environment Interactions
